@@ -89,6 +89,7 @@ public class BankBookDAO {
 		st.setInt(3, bankBookDTO.getBookSale());
 		st.setString(1, bankBookDTO.getBookName());
 		st.setDouble(2, bankBookDTO.getBookRate());
+		st.setString(4, bankBookDTO.getBookContents());
 		
 		//5. 최종 전송 및 결과 처리
 		int result = st.executeUpdate();

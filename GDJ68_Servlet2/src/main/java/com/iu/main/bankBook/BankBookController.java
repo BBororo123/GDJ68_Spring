@@ -72,6 +72,7 @@ public class BankBookController extends HttpServlet {
 					bankBookDTO.setBookName(request.getParameter("bankName"));
 					bankBookDTO.setBookRate(Double.parseDouble(request.getParameter("bookRate")));
 					bankBookDTO.setBookSale(Integer.parseInt(request.getParameter(viewName)));
+					bankBookDTO.setBookContents(request.getParameter("bookContents"));
 					
 					int result = bankBookDAO.bankBookAdd(bankBookDTO);
 					request.setAttribute(viewName, response);
