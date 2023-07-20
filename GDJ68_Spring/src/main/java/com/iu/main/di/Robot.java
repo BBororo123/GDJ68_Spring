@@ -1,21 +1,43 @@
 package com.iu.main.di;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component //new Robot()
 public class Robot {
 	
 	private String name;
 	
+	@Autowired
+	private Head head;
+	
+	@Autowired
+	private Arm leftArm;
+	
+	@Autowired
+	@Qualifier("arm2")
 	private Arm arm;
+	
+	
+	
 
-	public Robot() {
-		//this.arm = new Arm();
-		//결합도가 높다(강하다)
+	public Arm getLeftarm() {
+		return leftArm;
 	}
-	
-	public Robot(Arm arm) {
-		this.arm = arm;
-		//결합도가 낮다(약하다)
+
+	public void setLeftarm(Arm leftarm) {
+		this.leftArm = leftarm;
 	}
-	
+
+	public Head getHead() {
+		return head;
+	}
+
+	public void setHead(Head head) {
+		this.head = head;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -24,12 +46,6 @@ public class Robot {
 		this.name = name;
 	}
 
-	public Arm getArm() {
-		return arm;
-	}
-
-	public void setArm(Arm arm) {
-		this.arm = arm;
-	}
+	
 
 }
