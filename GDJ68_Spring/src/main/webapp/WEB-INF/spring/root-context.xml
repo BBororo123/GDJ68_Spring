@@ -25,6 +25,9 @@
 		<constructor-arg type="java.lang.Sring" value="BMW"></constructor-arg>
 		<constructor-arg type="com.iu.car.Engine" ref="engine"></constructor-arg>
 		-->
+		<!--  -->
+		<constructor-arg index="0" value="BMW"></constructor-arg>
+		<constructor-arg index="1" ref="engine"></constructor-arg>
 		
 		
 	</bean>

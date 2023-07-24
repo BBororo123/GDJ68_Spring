@@ -14,7 +14,7 @@
 	<section class="container mt-5">
 	<h1 class="my-4">Add Page</h1>
 	
-	<form action="./add.do" method="post">
+	<form action="./add" method="post">
 		<div class="mb-3">
 		  <label for="bookName" class="form-label">상품명</label>
 		  <input type="text" name="bookName" class="form-control" id="bookName" placeholder="상품명">
@@ -41,7 +41,28 @@
 		  </label>
 		</div>
 
-		<div class="my-3">
+			<div class="form-check">
+				<input class="form-check-input" value="1" type="checkbox"
+					name="sports" id="booKSale1" checked> <label
+					class="form-check-label" for="booKSale1"> 축구 </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" value="0" type="checkbox"
+					name="sports" id="booKSale2" checked> <label
+					class="form-check-label" for="booKSale2"> 농구 </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" value="0" type="checkbox"
+					name="sports" id="booKSale2" checked> <label
+					class="form-check-label" for="booKSale2"> 야구 </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" value="0" type="checkbox"
+					name="sports" id="booKSale2" checked> <label
+					class="form-check-label" for="booKSale2"> 배구 </label>
+			</div>
+
+			<div class="my-3">
 			<button type="submit" class="btn btn-danger">상품등록</button>
 		</div>
 
