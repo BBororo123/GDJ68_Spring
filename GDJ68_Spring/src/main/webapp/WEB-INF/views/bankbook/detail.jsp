@@ -11,7 +11,7 @@
 <body>
 <c:import url="../temp/header.jsp"></c:import>
 	<h1>Detail Page</h1>
-	<h1>${num}</h1>
+	
 	<%-- ${} --%>
 	<!-- Getter 이름 : 메서드에서 get을 제외하고 첫번째글자를 소문자로 바꾼것 -->
 	<h1>${requestScope.dto.bookName}</h1>
@@ -31,8 +31,8 @@
 		</c:otherwise>
 	</c:choose>
 	
-	<a href="./update.do?bookNum=${dto.bookNum}">수정</a>
-	<a href="./delete.do?bookNum=${dto.bookNum}">삭제</a>
+	<a href="./update?bookNum=${dto.bookNum}">수정</a>
+	<a href="./delete?bookNum=${dto.bookNum}">삭제</a>
 	
 <%-- 	
 	<c:if test="${dto.bookSale eq 1}">

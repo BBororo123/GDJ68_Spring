@@ -41,28 +41,7 @@
 		  </label>
 		</div>
 
-			<div class="form-check">
-				<input class="form-check-input" value="1" type="checkbox"
-					name="sports" id="booKSale1" checked> <label
-					class="form-check-label" for="booKSale1"> 축구 </label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" value="0" type="checkbox"
-					name="sports" id="booKSale2" checked> <label
-					class="form-check-label" for="booKSale2"> 농구 </label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" value="0" type="checkbox"
-					name="sports" id="booKSale2" checked> <label
-					class="form-check-label" for="booKSale2"> 야구 </label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" value="0" type="checkbox"
-					name="sports" id="booKSale2" checked> <label
-					class="form-check-label" for="booKSale2"> 배구 </label>
-			</div>
-
-			<div class="my-3">
+		<div class="my-3">
 			<button type="submit" class="btn btn-danger">상품등록</button>
 		</div>
 

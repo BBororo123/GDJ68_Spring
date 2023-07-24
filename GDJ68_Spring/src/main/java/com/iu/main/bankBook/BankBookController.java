@@ -1,6 +1,6 @@
 package com.iu.main.bankBook;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,42 +16,22 @@ public class BankBookController {
 	@Autowired
 	private BankBookService bankBookService;
 	
-	@RequestMapping(value="list.do", method = RequestMethod.GET)
-	public String getList()throws Exception{
-		System.out.println("list");
-		bankBookService.service();
-		
+	@RequestMapping(value="list", method = RequestMethod.GET)
+	public String getList(Model model)throws Exception{
+		List<BankBookDTO> ar = bankBookService.getList();
+		model.addAttribute("list", ar);
 		return "bankbook/list";
 	}
 	
-	@RequestMapping(value = "detail", method = RequestMethod.GET)
-	public ModelAndView getDetail()throws Exception{
-		System.out.println("detail");
-		//Model(request와 비슷한 역할) + View (jsp경로)
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("num", 123);
+	@RequestMapping(value = "detail")
+	public ModelAndView getDetail(BankBookDTO bankBookDTO, ModelAndView mv)throws Exception{
+		
+		//bankBookDTO.setBookNum(Long.parseLong(requestMapping.getParameter("bookNum"));
+		bankBookDTO = bankBookService.getDetail(bankBookDTO);
+		System.out.println(bankBookDTO.getBookName());
+		mv.addObject("dto", bankBookDTO);
 		mv.setViewName("bankbook/detail");
 		return mv;
 	}
-	
-	@RequestMapping(value = "add", method = RequestMethod.GET)
-	public ModelAndView setAdd(ModelAndView mv) throws Exception{
-		int num=333;
-		//return "bankbook/add";
-		//view의 경로명이 없으면 URL주소가 경로명으로 대체 됨
-		mv.addObject("num", num);
-		mv.setViewName("bankbook/add");
-		return mv;
-	}
-	
-	@RequestMapping(value = "add", method = RequestMethod.POST)
-	public String setAdd(Model model, HttpServletRequest request) throws Exception{
-		int num = 111;
-		System.out.println(request.getParameter("bookName"));
-		System.out.println(request.getParameter("bookSale"));
-		model.addAttribute("num", num);
-		
-		return "redirect:./list"; 
-	}
-	
+
 }
